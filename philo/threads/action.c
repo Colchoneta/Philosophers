@@ -6,7 +6,7 @@
 /*   By: angcampo <angcampo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 20:51:16 by angcampo          #+#    #+#             */
-/*   Updated: 2024/09/06 10:26:06 by angcampo         ###   ########.fr       */
+/*   Updated: 2024/09/09 20:32:59 by angcampo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	take_forks(t_philo *philo)
 {
-	pthread_mutex_lock(philo->l_fork);
-	print_message(TAKE, philo);
 	pthread_mutex_lock(philo->r_fork);
+	print_message(TAKE, philo);
+	pthread_mutex_lock(philo->l_fork);
 	print_message(TAKE, philo);
 }
 
